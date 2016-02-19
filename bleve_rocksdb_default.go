@@ -10,7 +10,7 @@
 // implied. See the License for the specific language governing
 // permissions and limitations under the License.
 
-// +build forestdb forestdb_default_kvstore !rocksdb_default_kvstore
+// +build rocksdb rocksdb_default_kvstore !forestdb_default_kvstore
 
 package cbft
 
@@ -20,5 +20,5 @@ import (
 
 func init() {
 	// install forestdb as the default kv store
-	bleve.Config.DefaultKVStore = "forestdb"
+	bleve.Config.DefaultKVStore = "rocksdb"
 }

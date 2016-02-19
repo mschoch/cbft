@@ -1,4 +1,4 @@
-// Copyright (c) 2015 Couchbase, Inc.
+// Copyright (c) 2014 Couchbase, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License"); you
 // may not use this file except in compliance with the License. You
@@ -10,15 +10,10 @@
 // implied. See the License for the specific language governing
 // permissions and limitations under the License.
 
-// +build forestdb forestdb_default_kvstore !rocksdb_default_kvstore
+// +build rocksdb
 
 package cbft
 
 import (
-	"github.com/blevesearch/bleve"
+	_ "github.com/blevesearch/blevex/rocksdb"
 )
-
-func init() {
-	// install forestdb as the default kv store
-	bleve.Config.DefaultKVStore = "forestdb"
-}
